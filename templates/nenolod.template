@@ -1,0 +1,53 @@
+<?
+
+class Template extends TemplateRunner {
+
+	function headerHook() {
+?>
+<style type="text/css"><!--
+  body { font-family: Arial, sans-serif; }
+
+  h1 { font-size: 150%; color: #004488; border-bottom: 1px #000 solid; margin: 0; }
+  h2 { font-size: 125%; color: #004488; border-bottom: 1px #999999 dashed; }
+  h3 { font-size: 100%; color: #004488; border-bottom: 1px #999999 dashed; }
+
+  a { color: #004488; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  img { border: none; }
+--></style>
+<?
+	}
+
+	function footerHook() {
+?>
+<table style="width: 100%; border-top: #000 1px solid; padding-top: 5px; margin: 0;">
+<tr>
+<td>
+        <a href="/">home</a>
+<?
+        $segs = explode("/", $_REQUEST[name]);
+        $psegs = "/";
+        foreach ($segs as $seg) {
+                echo "&gt; <a href=\"$psegs".$seg."\">$seg</a> ";
+                $psegs .= "$seg/";
+        }
+?>
+</td>
+<td style="text-align: right;">
+<a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-html401-blue"
+        alt="Valid HTML 4.01 Strict!"></a>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+<img src="http://www.w3.org/Icons/valid-css-blue.png"
+        alt="Valid CSS!"></a>
+</td>
+</tr>
+</table>
+<?
+	}
+
+};
+
+?>
+

@@ -1,0 +1,73 @@
+<?
+
+class PageRenderer {
+	function PageRenderer() {
+		global $config;
+
+		$this->templatePath = $config['TemplateRenderer::TemplatePath'] . "/" . $config['TemplateRenderer::Template'] . ".template";
+	}
+
+	function run($parser) {
+		require($this->templatePath);
+
+		$t = new Template;
+		$t->run($parser);
+	}
+};
+
+class TemplateRunner {
+	function getPageTitle() {
+		return isset($this->parser->pragma['page-title']) ? $this->parser->pragma['page-title'] : $_REQUEST['name'];
+	}
+
+	function getPageHeader() {
+		if(isset($this->parser->pragma['page-header'])) {
+		   return $this->parser->pragma['page-header'];
+		}
+		if(isset($this->parser->pragma['page-title'])) {
+		   return $this->parser->pragma['page-title'];
+		}
+		return $_REQUEST['name'];
+	}
+
+	function doHeader() {
+?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?= $this->getPageTitle() ?></title>
+<?
+		$this->headerHook();
+?>
+<body>
+<?
+		$this->bodyHeaderHook();
+	}
+
+	function bodyHeaderHook() {}
+	function headerHook() {}
+	function footerHook() {}
+
+	function doFooter() {
+		$this->footerHook();
+?>
+</body>
+</html>
+<?
+	}
+
+	function renderDocument() {
+		echo $this->parser->getRenderedText();
+	}
+
+	function run($parser) {
+		$this->parser = $parser;
+
+		$this->doHeader();
+		$this->renderDocument();
+		$this->doFooter();
+	}
+};
+
+?>

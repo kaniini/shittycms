@@ -1,0 +1,47 @@
+<?
+
+class Template extends TemplateRunner {
+
+	function headerHook() {
+?>
+	<link rel="stylesheet" href="/assets/main.css" type="text/css" media="all" />
+
+<?
+	}
+
+	function bodyHeaderHook() {
+		global $config;
+?>
+	<div id="header-logo">
+		<span id="title"><?= $this->getPageHeader() ?></span>
+		<a href="/"><img src="/local-images/audlogo.png" alt="Audacious Logo"></a>
+	</div>
+	<div id="menubar">
+	<ul><li><a href="/">Home</a></li>
+	<li><a href="http://boards.audacious-media-player.org">Forums</a></li>
+	<li><a href="http://jira.atheme.org">JIRA</a></li>
+<?	$iter = new DirectoryIterator($config['FilesystemBackend::Path']);
+	foreach ($iter as $entity) {
+		if (($entity->isDir() || $entity->isFile()) && !$entity->isDot() && $entity->getFilename() != "index") {
+?>
+		<li><a href="/<?= $entity->getFilename() ?>"><?= $entity->getFilename() ?></a></li>
+<?
+		}
+	}
+?>
+	</ul>
+	</div>
+	<div id="content">
+<?
+	}
+
+	function footerHook() {
+?>
+	</div>
+<?
+	}
+
+};
+
+?>
+

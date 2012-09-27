@@ -1,0 +1,159 @@
+		img
+		{
+			border: none;
+		}
+
+		html
+		{
+			margin:			0;
+			background:		#0C376F;
+			font-family:		"Dejavu Sans",Helvetica,Arial,Verdana,Geneva,sans-serif;
+		}
+
+		body
+		{
+			margin: 0;
+		}
+
+		a
+		{
+			color: #0000ff;
+			text-decoration: none;
+		}
+
+		a:hover[name]
+		{
+			color: #000;
+		}
+
+		a:hover
+		{
+			color: #24CAFF;
+			text-decoration: underline;
+		}
+
+		#header-logo
+		{
+			background:		url('/local-images/mainheader.png') #0C376F;
+			font-size:		3em;
+			color:			#fff;
+		}
+
+		#title
+		{
+			margin:			0.3em;
+			text-align:		right;
+			font-size:		1em;
+			color:			#fff;
+			float:			right;
+		}
+
+		#menubar
+		{
+			background-color:	#fff;
+			margin:			1em;
+			color:			#000;
+			font-size:		1em;	
+			width:			20%;
+			float:			left;
+			border-radius:		0.3em;
+			-moz-border-radius:	0.3em;
+			-webkit-border-radius:	0.3em;
+			padding:		0em;
+		}
+
+		#menubar a
+		{
+			color:			#000;
+			text-transform:		capitalize;
+		}
+
+		#menubar ul
+		{
+			list-style-type:	square;
+			list-style-image:	url('/assets/images/bullet.gif');
+			line-height:		1.6em;
+			margin:			0.3em;
+			margin-left:		-1.3em;
+		}
+
+		#content
+		{
+			margin-top:		1em;
+			margin-left:		22%;
+			margin-right:		1em;
+			min-width:		600px;
+			background-color:	#fff;
+			color:			#000;
+			font-size:		1em;
+			line-height:		1.3em;
+			padding:		1em;
+			border-radius:		0.3em;
+			-moz-border-radius:	0.3em;
+			-webkit-border-radius:	0.3em;
+		}
+
+		#content img
+		{
+			float:			left;
+			border:			1px solid #aaa;
+			background-color:	#ececec;
+			padding:		0.5em;
+			margin-right:		0.5em;
+		}
+
+		#footer
+		{
+			margin-left:		2%;
+			margin-right:		2%;
+			width:			96%;
+			padding:		0.5%;
+			background-color:	#000;
+			color:			#fff;
+		}
+
+		#footer a
+		{
+			text-decoration:	none;
+			color:			#fff;
+			padding:		0.2em;
+		}
+
+		#screenshot
+		{
+			float:			left;
+			margin: 		1em;
+			text-align:		center;
+			width:			275px;
+		}
+
+		#screenshot img
+		{
+			margin: 		0;
+			padding: 		0;
+		}
+
+		#screenshot p
+		{
+			margin: 		0;
+		}
+
+		ul
+		{
+			list-style-type:	square;
+			list-style-image:	url('/assets/images/bullet.gif');
+		}
+
+		#footer a:hover { text-decoration: underline; }
+
+		#footer img { opacity: 0.6; -moz-opacity: 0.6; }
+		#footer img:hover { opacity: 1.0; -moz-opacity: 1.0; }
+
+		h1, h2, h3, h4, h5, h6 { margin: 0; color: #000; }
+		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #000; text-decoration: none; }
+		h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { text-decoration: none; }
+		h1 { font-size: 1.3em; }
+		h2 { font-size: 1.2em; }
+		h3 { font-size: 1.1em; }
+
+		table, form, p, blockquote { margin: 0 0 1em 0; }

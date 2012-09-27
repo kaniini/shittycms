@@ -1,0 +1,25 @@
+<?
+
+class AcquisitionBackend {
+	function AcquisitionBackend($document) {
+		global $config;
+
+		$this->data = "";
+
+		$path = $config['FilesystemBackend::Path'] . $document;
+		if (is_dir($path))
+			$path .= "/index";
+
+		if (file_exists($path))
+			$this->data = file_get_contents($path);
+		else {
+			header("404 File Not Found");	/* XXX: call 404Handler once available */
+		}
+	}
+
+	function getData() {
+		return $this->data;
+	}
+};
+
+?>

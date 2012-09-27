@@ -1,0 +1,7 @@
+<?
+$config['Core::TextAcquisitionBackend'] = "backends/filesystem.backend";
+$config['FilesystemBackend::Path'] = "/var/www/localhost/docs/";
+$config['Core::PageRenderer'] = "renderers/SimpleTemplateRenderer.renderer";
+$config['TemplateRenderer::TemplatePath'] = "/var/www/localhost/htdocs/templates";
+$config['TemplateRenderer::Template'] = "nenolod";
+?>
