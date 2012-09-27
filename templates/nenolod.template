@@ -1,4 +1,4 @@
-<?
+<?php
 
 class Template extends TemplateRunner {
 
@@ -16,7 +16,7 @@ class Template extends TemplateRunner {
 
   img { border: none; }
 --></style>
-<?
+<?php
 	}
 
 	function footerHook() {
@@ -25,7 +25,7 @@ class Template extends TemplateRunner {
 <tr>
 <td>
         <a href="/">home</a>
-<?
+<?php
         $segs = explode("/", $_REQUEST[name]);
         $psegs = "/";
         foreach ($segs as $seg) {
@@ -44,7 +44,7 @@ class Template extends TemplateRunner {
 </td>
 </tr>
 </table>
-<?
+<?php
 	}
 
 };

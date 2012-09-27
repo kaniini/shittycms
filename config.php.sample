@@ -1,4 +1,4 @@
-<?
+<?php
 $config['Core::TextAcquisitionBackend'] = "backends/filesystem.backend";
 $config['FilesystemBackend::Path'] = "/var/www/localhost/docs/";
 $config['Core::PageRenderer'] = "renderers/SimpleTemplateRenderer.renderer";

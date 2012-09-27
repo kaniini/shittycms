@@ -1,4 +1,4 @@
-<?
+<?php
 
 class Template extends TemplateRunner {
 
@@ -113,7 +113,7 @@ class Template extends TemplateRunner {
 
 		table, form, p, blockquote { margin: 0 0 1em 0; }
 	--></style>
-<?
+<?php
 	}
 
 	function bodyHeaderHook() {
@@ -121,24 +121,24 @@ class Template extends TemplateRunner {
 ?>
 	<div id="header"><?= $this->getPageTitle() ?></div>
 	<div id="menubar"><a href="/">home</a>
-<?	$iter = new DirectoryIterator($config['FilesystemBackend::Path']);
+<?php	$iter = new DirectoryIterator($config['FilesystemBackend::Path']);
 	foreach ($iter as $entity) {
 		if (($entity->isDir() || $entity->isFile()) && !$entity->isDot() && $entity->getFilename() != "index") {
 ?>
 		<a href="/<?= $entity->getFilename() ?>"><?= $entity->getFilename() ?></a>
-<?
+<?php
 		}
 	}
 ?>
 	</div>
 	<div id="content">
-<?
+<?php
 	}
 
 	function footerHook() {
 ?>
 	</div>
-<?
+<?php
 	}
 
 };
