@@ -119,13 +119,13 @@ class Template extends TemplateRunner {
 	function bodyHeaderHook() {
 		global $config;
 ?>
-	<div id="header"><?= $this->getPageTitle() ?></div>
+	<div id="header"><?php echo $this->getPageTitle() ?></div>
 	<div id="menubar"><a href="/">home</a>
 <?php	$iter = new DirectoryIterator($config['FilesystemBackend::Path']);
 	foreach ($iter as $entity) {
 		if (($entity->isDir() || $entity->isFile()) && !$entity->isDot() && $entity->getFilename() != "index") {
 ?>
-		<a href="/<?= $entity->getFilename() ?>"><?= $entity->getFilename() ?></a>
+		<a href="/<?php echo $entity->getFilename() ?>"><?php echo $entity->getFilename() ?></a>
 <?php
 		}
 	}

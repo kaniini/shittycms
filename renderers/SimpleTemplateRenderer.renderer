@@ -36,7 +36,7 @@ class TemplateRunner {
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title><?= $this->getPageTitle() ?></title>
+<title><?php echo $this->getPageTitle() ?></title>
 <?php
 		$this->headerHook();
 ?>

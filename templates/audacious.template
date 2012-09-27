@@ -13,7 +13,7 @@ class Template extends TemplateRunner {
 		global $config;
 ?>
 	<div id="header-logo">
-		<span id="title"><?= $this->getPageHeader() ?></span>
+		<span id="title"><?php echo $this->getPageHeader() ?></span>
 		<a href="/"><img src="/local-images/audlogo.png" alt="Audacious Logo"></a>
 	</div>
 	<div id="menubar">
@@ -24,7 +24,7 @@ class Template extends TemplateRunner {
 	foreach ($iter as $entity) {
 		if (($entity->isDir() || $entity->isFile()) && !$entity->isDot() && $entity->getFilename() != "index") {
 ?>
-		<li><a href="/<?= $entity->getFilename() ?>"><?= $entity->getFilename() ?></a></li>
+		<li><a href="/<?php echo $entity->getFilename() ?>"><?php echo $entity->getFilename() ?></a></li>
 <?php
 		}
 	}
